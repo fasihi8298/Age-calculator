@@ -102,5 +102,22 @@
 
 
 </body>
-
 </html>
+<script>
+     function calculateAge() {
+            // Get the input value
+            var birthdate = document.getElementById('birthdate').value;
+
+            // Calculate the age
+            var today = new Date();
+            var birthDate = new Date(birthdate);
+            var age = today.getFullYear() - birthDate.getFullYear();
+
+            // Check if birthday has occurred this year
+            if (today.getMonth() < birthDate.getMonth() || (today.getMonth() === birthDate.getMonth() && today.getDate() < birthDate.getDate())) {
+                age--;
+            }
+
+            // Display the result
+            document.getElementById('result').innerText = 'Your age is ' + age + ' years'; }
+</script>
